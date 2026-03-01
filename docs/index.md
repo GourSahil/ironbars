@@ -13,13 +13,15 @@ interpretive visual suggestions tailored to your data types and relationships.
 ---
 ## Scope
 **IronBars** focuses on :-
+
 1. Focused on **Auto EDA (Exploratory Data Analysis)**
 2. Suggests and generates suitable plots
 3. Designed for structured tabular datasets (CSV / pandas DataFrame)
 4. Intended for students, analysts, and ML beginners
 
 ## Out of Scope
-IronBars does not aim to:
+IronBars does not aim to:-
+
 1. Replace full business intelligence platforms
 2. Perform automated machine learning
 3. Provide deep statistical infer
