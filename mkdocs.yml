@@ -1,0 +1,18 @@
+site_name: IronBars
+site_description: Intelligent Data Visualization & EDA Assistant
+site_author: Sahil Gour aka Sevrus
+
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - Change Log: changelog.md
+  - API Reference: api.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]
