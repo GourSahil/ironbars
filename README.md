@@ -1,5 +1,6 @@
 # Ironbars
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
 **IronBars** is a Python library that automatically analyzes tabular datasets and
 suggests the most suitable visualizations and preprocessing ideas. Instead
 of manually guessing which plots to use, IronBars guides you with clean,
