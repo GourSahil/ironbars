@@ -1,4 +1,6 @@
 # Ironbars
+> ⚠️ This is the **Alpha** branch, code here is untested and may break things.
+
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 **IronBars** is a Python library that automatically analyzes tabular datasets and
