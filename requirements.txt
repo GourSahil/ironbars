@@ -1,0 +1,4 @@
+# Requirements file for the ironbars project
+pandas
+numpy
+matplotlib
