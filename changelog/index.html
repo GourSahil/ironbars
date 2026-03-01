@@ -47,7 +47,11 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Change Log</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#version-v010-alpha">Version v0.1.0-alpha</a>
+    <li class="toctree-l2"><a class="reference internal" href="#010a1-2026-03-01">[0.1.0a1] - 2026-03-01</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#added">Added</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#version-chart">Version Chart</a>
     </li>
@@ -82,14 +86,38 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="changelog">Changelog</h1>
-<h2 id="version-v010-alpha">Version v0.1.0-alpha</h2>
-<blockquote>
-<p>Version currently under development no changes have made yet!</p>
-</blockquote>
+<p>All notable changes to IronBars will be documented in this file.</p>
+<p>The format is based on semantic versioning (PEP 440 compliant).</p>
+<hr />
+<h2 id="010a1-2026-03-01">[0.1.0a1] - 2026-03-01</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Initial <code>Analyzer</code> implementation</li>
+<li>Column-level metadata generation</li>
+<li>Unique ratio (<code>unique_score</code>) calculation</li>
+<li>Missing ratio (<code>missing_score</code>) calculation</li>
+<li>Normalized volatility metric (<code>diff_score</code>)</li>
+<li>Semantic classification system:</li>
+<li><code>continuous</code></li>
+<li><code>categorical</code></li>
+<li><code>categorical_numeric</code></li>
+<li><code>identifier</code></li>
+<li><code>constant</code></li>
+<li><code>empty</code></li>
+<li><code>datetime</code></li>
+<li>Edge case handling for:</li>
+<li>Empty columns</li>
+<li>Constant columns</li>
+<li>Sequential identifiers</li>
+<li>Mixed-type inputs</li>
+<li>Pytest-based test suite</li>
+<li>MkDocs documentation with API auto-generation</li>
+<li>GitHub Pages deployment</li>
+</ul>
+<hr />
 <h2 id="version-chart">Version Chart</h2>
-<pre><code class="language-bash">IronBars
-    |----&gt; v0.1.0-alpha (🪒) [March 1, 2026]
-</code></pre>
+<p>IronBars<br />
+└── 0.1.0a1 (Alpha Release) – March 1, 2026</p>
               
             </div>
           </div><footer>
