@@ -1,4 +1,4 @@
 # Requirements file for the ironbars project
-pandas
-numpy
-matplotlib
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.10.8

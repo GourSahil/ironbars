@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ironbars"
+version = "0.1.0a1"
+description = "Intelligent Data Visualization & EDA Assistant"
+authors = [
+    { name = "Sahil Gour", email = "b25bs1304@iitj.ac.in" }
+]
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "matplotlib>=3.10.8"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ironbars*"]
+exclude = ["tests*", "docs*", "site*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
