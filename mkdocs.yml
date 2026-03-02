@@ -11,9 +11,14 @@ nav:
   - API Reference: api.md
   - Usage Guide: usage.md
 
+markdown_extensions:
+  - pymdownx.snippets:
+      check_paths: true
+  - tables
+
 plugins:
   - search
   - mkdocstrings:
       handlers:
         python:
-          paths: ["src"]
+          paths: ["src", "docs"]

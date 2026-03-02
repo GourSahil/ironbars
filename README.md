@@ -41,7 +41,7 @@ pip install ironbars
 ```
 
 ## Usage
-> You will find the usage at [Usage Guide](https://goursahil.github.io/ironbars/usageguide)
+> You will find the usage at [Usage Guide](https://goursahil.github.io/ironbars/usage)
 
 ## How IronBars Thinks
 

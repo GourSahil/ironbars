@@ -1,0 +1,11 @@
+| column                   | dtype   |   length |   unique_count |   unique_score |   missing_score |   diff_score | semantic_type       |
+|:-------------------------|:--------|---------:|---------------:|---------------:|----------------:|-------------:|:--------------------|
+| Pregnancies              | int64   |      768 |             17 |          0.022 |               0 |        0.999 | categorical_numeric |
+| Glucose                  | int64   |      768 |            136 |          0.177 |               0 |        0.998 | continuous          |
+| BloodPressure            | int64   |      768 |             47 |          0.061 |               0 |        1     | categorical_numeric |
+| SkinThickness            | int64   |      768 |             51 |          0.066 |               0 |        1     | categorical_numeric |
+| Insulin                  | int64   |      768 |            186 |          0.242 |               0 |        1     | continuous          |
+| BMI                      | float64 |      768 |            248 |          0.323 |               0 |        1     | continuous          |
+| DiabetesPedigreeFunction | float64 |      768 |            517 |          0.673 |               0 |        0.999 | continuous          |
+| Age                      | int64   |      768 |             52 |          0.068 |               0 |        0.998 | categorical_numeric |
+| Outcome                  | int64   |      768 |              2 |          0.003 |               0 |        0.998 | categorical_numeric |
