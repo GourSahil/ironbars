@@ -7,7 +7,7 @@ import ironbars.core.analyzer as analyzer
 PATH = Path(__file__).parent
 special_dump = False
 
-def run_analyzer(dataframe: pd.DataFrame, export_prefix: str):
+def run_analyzer(dataframe: pd.DataFrame, export_prefix: str, dump=False):
     """
     Helper function to analyze dataframe and export both
     dataset + metadata for manual inspection.
@@ -28,7 +28,7 @@ def run_analyzer(dataframe: pd.DataFrame, export_prefix: str):
         assert "semantic_type" in meta
 
     # Save dataset
-    if special_dump:
+    if dump:
         dataframe.to_csv(PATH / f"{export_prefix}_dataset.csv", index=False)
 
     # Convert metadata dict to DataFrame
@@ -36,7 +36,7 @@ def run_analyzer(dataframe: pd.DataFrame, export_prefix: str):
     metadata_df.index.name = "column"
 
     # Save metadata
-    if special_dump:
+    if dump:
         metadata_df.to_csv(PATH / f"{export_prefix}_metadata.csv")
 
     return metadata
