@@ -55,6 +55,20 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Usage Guide</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#using-the-analyzer">Using the analyzer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-code">Sample Code</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#output">Output</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-json">1. Json</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-csv">2. CSV</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -81,11 +95,239 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="usage">Usage</h1>
+                <h1 id="usage-guide">Usage Guide</h1>
+<hr />
+<h2 id="using-the-analyzer">Using the analyzer</h2>
+<h3 id="sample-code">Sample Code</h3>
 <blockquote>
-<p>Usage to the code will be shown here!
-if this section is empty, <strong>please be patient, I'll update this section soon</strong>.</p>
+<p>We are using <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database">pima-indians-diabetes-database</a>.</p>
 </blockquote>
+<pre><code class="language-python"># This is the example of how to use the analyzer to analyze the code and get the result.
+# You can run this code by using the command: python example_analyzer.py
+
+# Dataset URL -&gt; https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
+
+import ironbars.core.analyzer as analyzer
+import pandas as pd
+import csv
+from pathlib import Path
+
+orig_path = Path(__file__).parent
+
+# loading the dataset
+df = pd.read_csv(orig_path / &quot;datasets&quot; / &quot;diabetes.csv&quot;)
+print(&quot;Dataset loaded successfully. Here are the first few rows:&quot;)
+print(df.head())
+
+# analyzing the dataset
+Analyzer = analyzer.Analyzer()
+metadata_df = Analyzer.analyze(df) # metadata is stored in the result variable, which is a Metadata object
+
+# saving the result to csv and json files
+metadata_df = pd.DataFrame.from_dict(metadata_df.columns, orient=&quot;index&quot;)
+metadata_df.index.name = &quot;column&quot;
+metadata_df.to_csv(orig_path / &quot;results&quot; / f&quot;diabetes_metadata.csv&quot;)
+metadata_df.to_json(orig_path / &quot;results&quot; / f&quot;diabetes_metadata.json&quot;, orient=&quot;index&quot;, indent=4)
+metadata_df.to_markdown(orig_path / &quot;generated&quot; / f&quot;diabetes_metadata.md&quot;, index=True)
+
+print(&quot;Metadata analysis completed. The results are saved in the results folder.&quot;)
+print(metadata_df.head())
+
+</code></pre>
+<hr />
+<h3 id="output">Output</h3>
+<h4 id="1-json">1. Json</h4>
+<pre><code class="language-json">{
+    &quot;Pregnancies&quot;:{
+        &quot;dtype&quot;:&quot;int64&quot;,
+        &quot;length&quot;:768,
+        &quot;unique_count&quot;:17,
+        &quot;unique_score&quot;:0.022,
+        &quot;missing_score&quot;:0.0,
+        &quot;diff_score&quot;:0.999,
+        &quot;semantic_type&quot;:&quot;categorical_numeric&quot;
+    },
+    &quot;Glucose&quot;:{
+        &quot;dtype&quot;:&quot;int64&quot;,
+        &quot;length&quot;:768,
+        &quot;unique_count&quot;:136,
+        &quot;unique_score&quot;:0.177,
+        &quot;missing_score&quot;:0.0,
+        &quot;diff_score&quot;:0.998,
+        &quot;semantic_type&quot;:&quot;continuous&quot;
+    },
+    &quot;BloodPressure&quot;:{
+        &quot;dtype&quot;:&quot;int64&quot;,
+        &quot;length&quot;:768,
+        &quot;unique_count&quot;:47,
+        &quot;unique_score&quot;:0.061,
+        &quot;missing_score&quot;:0.0,
+        &quot;diff_score&quot;:1.0,
+        &quot;semantic_type&quot;:&quot;categorical_numeric&quot;
+    },
+    &quot;SkinThickness&quot;:{
+        &quot;dtype&quot;:&quot;int64&quot;,
+        &quot;length&quot;:768,
+        &quot;unique_count&quot;:51,
+        &quot;unique_score&quot;:0.066,
+        &quot;missing_score&quot;:0.0,
+        &quot;diff_score&quot;:1.0,
+        &quot;semantic_type&quot;:&quot;categorical_numeric&quot;
+    },
+    &quot;Insulin&quot;:{
+        &quot;dtype&quot;:&quot;int64&quot;,
+        &quot;length&quot;:768,
+        &quot;unique_count&quot;:186,
+        &quot;unique_score&quot;:0.242,
+        &quot;missing_score&quot;:0.0,
+        &quot;diff_score&quot;:1.0,
+        &quot;semantic_type&quot;:&quot;continuous&quot;
+    },
+    &quot;BMI&quot;:{
+        &quot;dtype&quot;:&quot;float64&quot;,
+        &quot;length&quot;:768,
+        &quot;unique_count&quot;:248,
+        &quot;unique_score&quot;:0.323,
+        &quot;missing_score&quot;:0.0,
+        &quot;diff_score&quot;:1.0,
+        &quot;semantic_type&quot;:&quot;continuous&quot;
+    },
+    &quot;DiabetesPedigreeFunction&quot;:{
+        &quot;dtype&quot;:&quot;float64&quot;,
+        &quot;length&quot;:768,
+        &quot;unique_count&quot;:517,
+        &quot;unique_score&quot;:0.673,
+        &quot;missing_score&quot;:0.0,
+        &quot;diff_score&quot;:0.999,
+        &quot;semantic_type&quot;:&quot;continuous&quot;
+    },
+    &quot;Age&quot;:{
+        &quot;dtype&quot;:&quot;int64&quot;,
+        &quot;length&quot;:768,
+        &quot;unique_count&quot;:52,
+        &quot;unique_score&quot;:0.068,
+        &quot;missing_score&quot;:0.0,
+        &quot;diff_score&quot;:0.998,
+        &quot;semantic_type&quot;:&quot;categorical_numeric&quot;
+    },
+    &quot;Outcome&quot;:{
+        &quot;dtype&quot;:&quot;int64&quot;,
+        &quot;length&quot;:768,
+        &quot;unique_count&quot;:2,
+        &quot;unique_score&quot;:0.003,
+        &quot;missing_score&quot;:0.0,
+        &quot;diff_score&quot;:0.998,
+        &quot;semantic_type&quot;:&quot;categorical_numeric&quot;
+    }
+}
+</code></pre>
+<h4 id="2-csv">2. CSV</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">column</th>
+<th style="text-align: left;">dtype</th>
+<th style="text-align: right;">length</th>
+<th style="text-align: right;">unique_count</th>
+<th style="text-align: right;">unique_score</th>
+<th style="text-align: right;">missing_score</th>
+<th style="text-align: right;">diff_score</th>
+<th style="text-align: left;">semantic_type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Pregnancies</td>
+<td style="text-align: left;">int64</td>
+<td style="text-align: right;">768</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">0.022</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.999</td>
+<td style="text-align: left;">categorical_numeric</td>
+</tr>
+<tr>
+<td style="text-align: left;">Glucose</td>
+<td style="text-align: left;">int64</td>
+<td style="text-align: right;">768</td>
+<td style="text-align: right;">136</td>
+<td style="text-align: right;">0.177</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.998</td>
+<td style="text-align: left;">continuous</td>
+</tr>
+<tr>
+<td style="text-align: left;">BloodPressure</td>
+<td style="text-align: left;">int64</td>
+<td style="text-align: right;">768</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">0.061</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">categorical_numeric</td>
+</tr>
+<tr>
+<td style="text-align: left;">SkinThickness</td>
+<td style="text-align: left;">int64</td>
+<td style="text-align: right;">768</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">0.066</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">categorical_numeric</td>
+</tr>
+<tr>
+<td style="text-align: left;">Insulin</td>
+<td style="text-align: left;">int64</td>
+<td style="text-align: right;">768</td>
+<td style="text-align: right;">186</td>
+<td style="text-align: right;">0.242</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">continuous</td>
+</tr>
+<tr>
+<td style="text-align: left;">BMI</td>
+<td style="text-align: left;">float64</td>
+<td style="text-align: right;">768</td>
+<td style="text-align: right;">248</td>
+<td style="text-align: right;">0.323</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">continuous</td>
+</tr>
+<tr>
+<td style="text-align: left;">DiabetesPedigreeFunction</td>
+<td style="text-align: left;">float64</td>
+<td style="text-align: right;">768</td>
+<td style="text-align: right;">517</td>
+<td style="text-align: right;">0.673</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.999</td>
+<td style="text-align: left;">continuous</td>
+</tr>
+<tr>
+<td style="text-align: left;">Age</td>
+<td style="text-align: left;">int64</td>
+<td style="text-align: right;">768</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">0.068</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.998</td>
+<td style="text-align: left;">categorical_numeric</td>
+</tr>
+<tr>
+<td style="text-align: left;">Outcome</td>
+<td style="text-align: left;">int64</td>
+<td style="text-align: right;">768</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.003</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.998</td>
+<td style="text-align: left;">categorical_numeric</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div><footer>
