@@ -208,5 +208,3 @@ __marimo__/
 
 dev_reqs.txt
 pytest.ini
-
-*.csv
