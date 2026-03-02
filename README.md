@@ -1,5 +1,6 @@
 # Ironbars
 > ⚠️ This is the **Alpha** branch, code here is untested and may break things.
+> You can check the changelogs at [Ironbars.changelogs](https://goursahil.github.io/ironbars/changelog/)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
@@ -8,23 +9,39 @@ suggests the most suitable visualizations and preprocessing ideas. Instead
 of manually guessing which plots to use, IronBars guides you with clean,
 interpretive visual suggestions tailored to your data types and relationships.
 
-> **Transform raw datasets into meaningful visual insights through automated, intelligent plot selection.**
+```bash
+ Transform raw datasets into meaningful visual insights through automated,
+ Intelligent plot selection.
+```
 ---
 ## Scope
 **IronBars** focuses on :-
+
 1. Focused on **Auto EDA (Exploratory Data Analysis)**
 2. Suggests and generates suitable plots
 3. Designed for structured tabular datasets (CSV / pandas DataFrame)
 4. Intended for students, analysts, and ML beginners
 
 ## Out of Scope
-IronBars does not aim to:
+IronBars does not aim to:-
+
 1. Replace full business intelligence platforms
 2. Perform automated machine learning
 3. Provide deep statistical infer
 4. Act as a dashboard framework
 
 ---
+
+## Installation Instructions
+
+- Installed python version must be **>=3.10**
+
+```bash
+pip install ironbars
+```
+
+## Usage
+> You will find the usage at [Usage Guide](https://goursahil.github.io/ironbars/usageguide)
 
 ## How IronBars Thinks
 

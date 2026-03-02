@@ -30,10 +30,15 @@ IronBars does not aim to:-
 ---
 
 ## Installation Instructions
-> Currently library is under development, I will publish it soon over pypi. If you really wanna use the code, just simply clone the repository and import the ironbars in your code.
+
+- Installed python version must be **>=3.10**
+
+```bash
+pip install ironbars
+```
 
 ## Usage
-> Currently first version isn't made yet, This part will be updated as I publish the first version.
+> You will find the usage at [Docs](https://goursahil.github.io/ironbars)
 
 ## How IronBars Thinks
 

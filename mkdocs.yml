@@ -9,10 +9,11 @@ nav:
   - Home: index.md
   - Change Log: changelog.md
   - API Reference: api.md
+  - Usage Guide: usage.md
 
 plugins:
   - search
   - mkdocstrings:
       handlers:
         python:
-          paths: [.]
+          paths: ["src"]

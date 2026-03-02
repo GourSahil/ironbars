@@ -6,6 +6,10 @@ The format is based on semantic versioning (PEP 440 compliant).
 
 ---
 
+## [0.1.0a2] - 2026-03-02
+- Improved the structure to use src/ironbars
+- Published the library on pypi.org
+
 ## [0.1.0a1] - 2026-03-01
 
 ### Added
@@ -37,3 +41,4 @@ The format is based on semantic versioning (PEP 440 compliant).
 
 IronBars  
 └── 0.1.0a1 (Alpha Release) – March 1, 2026
+└── 0.1.0.a2 (Alpha Release) - March 2, 2026

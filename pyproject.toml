@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ironbars"
-version = "0.1.0a1"
+version = "0.1.0a2"
 description = "Intelligent Data Visualization & EDA Assistant"
 authors = [
     { name = "Sahil Gour", email = "b25bs1304@iitj.ac.in" }
@@ -28,10 +28,10 @@ dev = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"]
 include = ["ironbars*"]
 exclude = ["tests*", "docs*", "site*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["."]
+pythonpath = ["src"]

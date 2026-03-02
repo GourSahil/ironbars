@@ -1,2 +1,7 @@
-# __init__.py
-__version__ = "v0.1.0-alpha"
+from importlib.metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version("ironbars")
+except PackageNotFoundError:
+    # Fallback for local development
+    __version__ = "0.0.0"
